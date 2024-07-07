@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎹 Repertorio Musical 🎹</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <div id="AgregarCancion">
+    <h2 class="pt-3">&#119070; Mi repertorio &#119070;</h2>
+
+    <div class="container pt-5 w-50">
+      <form id="agregarCancion">
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Canción:</label>
+          <div class="col-sm-10">
+            <input required type="text" name="titulo" placeholder="Nombre de la Cancion" class="form-control"
+              id="cancion" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Artista: </label>
+          <div class="col-sm-10">
+            <input required type="text" name="artista" placeholder="nombre del Artista" class="form-control"
+              id="artista" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Tono:</label>
+          <div class="col-sm-10">
+            <input required type="text" name="tono" placeholder="Tono de la cancion (Mi/E)" class="form-control"
+              id="tono" />
+          </div>
+        </div>
+
+        <button type="submit" id="agregar" class="m-auto btn btn-success">
+          Agregar
+        </button>
+
+      </form>
+    </div>
+  </div>
+  <div id="ListaCanciones">
+    <hr />
+    <hr />
+    <h2>Tabla de canciones &#127908;</h2>
+
+    <div class="container pt-5 w-75">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Canción</th>
+            <th scope="col">Artista</th>
+            <th scope="col">Tono</th>
+            <th scope="col">-</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpo"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <article class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5 text-dark text-center" id="exampleModalLabel"> Editar Cancion </h2>
+          <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close">X</button>
+        </div>
+        <div class="modal-body">
+          <form id="fEditarCancion">
+            <input required type="text" name="titulo" placeholder="a dios le pido" class="form-control" id="cancion" />
+            <input required type="text" name="artista" placeholder="juanes" class="form-control" id="artista" />
+            <input required type="text" name="tono" placeholder="Em" class="form-control" id="tono" />
+
+            <button type="" id="editar" class="m-auto btn btn-success"> Editar </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>
